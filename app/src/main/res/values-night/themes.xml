@@ -1,0 +1,49 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.ProductStore" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+
+        <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
+
+    </style>
+
+
+    <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Card</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamilyTopLeft">rounded</item>
+        <item name="cornerFamilyBottomRight">rounded</item>
+        <item name="cornerSizeTopLeft">64dp</item>
+        <item name="cornerSizeBottomRight">64dp</item>
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+    </style>
+
+
+    <style name="ThemeOverlay.App.Card" parent="">
+        <item name="colorPrimary">#E41616</item>
+        <item name="colorSurface">#303030</item>
+        <item name="colorOnSurface">?attr/colorSurface</item>
+    </style>
+
+    <style name="LaunchTheme" parent="Theme.ProductStore.NoActionBar">
+
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowActivityTransitions">false</item>
+        <item name="android:windowBackground">@drawable/launch_dark_xml</item>
+
+    </style>
+</resources>
