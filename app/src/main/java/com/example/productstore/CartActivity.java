@@ -1,9 +1,5 @@
 package com.example.productstore;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +10,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.Objects;
 
 public class CartActivity extends AppCompatActivity implements ProductCartAdapter.OnItemClickListener {
