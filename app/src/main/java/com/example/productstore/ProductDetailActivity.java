@@ -41,6 +41,7 @@ public class ProductDetailActivity extends AppCompatActivity {
     ImageView image;
     TextView titleTextView;
     ViewGroup layoutConstraint, layoutLinear;
+    private TextView productDetailPrize;
 
 
     @Override
@@ -62,6 +63,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         image = findViewById(R.id.productDetailImageView);
         titleTextView = findViewById(R.id.detailTitleTextView);
+        productDetailPrize = findViewById(R.id.productDetailPrize);
         layoutConstraint = findViewById(R.id.layoutConstraint);
         layoutLinear = findViewById(R.id.layoutLinear);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -102,6 +104,7 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         image.setImageResource(currentItem.resId);
         titleTextView.setText(currentItem.title);
+        productDetailPrize.setText(currentItem.prize);
 
         // BEGIN_INCLUDE(detail_set_view_name)
         /*

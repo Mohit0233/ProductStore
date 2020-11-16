@@ -72,4 +72,12 @@ public class CartActivity extends AppCompatActivity implements ProductCartAdapte
 
     }
 
+    @Override
+    public void onButtonClick() {
+        if (databaseHelper.getCartText().size() == 0) {
+            checkoutButton.setVisibility(View.GONE);
+            nothingTextView.setVisibility(View.VISIBLE);
+        }
+    }
+
 }

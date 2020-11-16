@@ -22,9 +22,10 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
     public final class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView image;
-        TextView title,prize;
+        TextView title, prize;
         ImageButton remove;
         ConstraintLayout cartLayout;
+
         public ViewHolder(@NonNull View view) {
             super(view);
             image = view.findViewById(R.id.cartImageView);
@@ -34,6 +35,7 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
             cartLayout = view.findViewById(R.id.cartLayout);
             view.setOnClickListener(this);
         }
+
         @Override
         public void onClick(View v) {
             int position = getAdapterPosition(); // gets item position
@@ -74,6 +76,7 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
             } else {
                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
             }
+            listener.onButtonClick();
         });
     }
 
@@ -84,6 +87,8 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
 
     interface OnItemClickListener {
         void onItemClick(int position, ImageView imageView, TextView textView, ViewGroup layoutCardView, int resId);
+
+        void onButtonClick();
     }
 
 }

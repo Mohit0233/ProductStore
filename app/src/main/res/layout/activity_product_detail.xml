@@ -81,6 +81,13 @@
                     android:text="Product Name"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
+
+                <TextView
+                    android:id="@+id/productDetailPrize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rs 40"/>
+
                 <TextView
                     android:id="@+id/detailDescriptionTextView"
                     android:layout_width="wrap_content"
@@ -89,11 +96,6 @@
                     android:text="This is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the product"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="hi"/>
 
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
