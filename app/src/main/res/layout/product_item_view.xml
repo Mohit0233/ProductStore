@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/outerConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
-    >
+    android:layout_marginTop="16dp">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
@@ -59,14 +57,14 @@
                     android:id="@+id/titleTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Product Name"
+                    android:text="@string/product_name"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
                     android:id="@+id/productPrizeTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="₹ 15000"
+                    android:text="@string/product_prize"
                     />
 
                 <TextView
@@ -76,7 +74,7 @@
                     android:layout_marginTop="8dp"
                     android:requiresFadingEdge="vertical"
                     android:fadingEdgeLength="64dp"
-                    android:text="This is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the productThis is the discription of the product"
+                    android:text="@string/this_is_the_description_of_the_product_this_is_the_description_of_the_product_this_is_the_description_of_the_product_this_is_the_description_of_the_product_this_is_the_description_of_the_product_this_is_the_description_of_the_product_this_is_the_description_of_the_product"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -101,7 +99,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/cartImageButton"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/add_to_favorite" />
 
                 <ImageButton
                     android:id="@+id/cartImageButton"
@@ -111,7 +110,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/favButton"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/add_to_cart" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

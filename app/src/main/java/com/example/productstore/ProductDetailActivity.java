@@ -27,10 +27,6 @@ public class ProductDetailActivity extends AppCompatActivity {
 
     // View name of the header title. Used for activity scene transitions
     public static final String VIEW_NAME_HEADER_TITLE = "detail:header:title";
-    public static final String IMAGE_RESOURCE_DRAWABLE = "image_resource_drawable";
-    public static final String TITLE_NAME = "title_name";
-    public static final String FAV_PRODUCT = "fav_product";
-    public static final String IN_CART = "in_cart";
     public static final String CART_BUTTON = "cart_button";
     public static final String FAVORITE_BUTTON = "favorite_button";
     public static final String POSITION_PRODUCT_ITEM = "position_product_item";
@@ -41,7 +37,6 @@ public class ProductDetailActivity extends AppCompatActivity {
     ImageView image;
     TextView titleTextView;
     ViewGroup layoutConstraint, layoutLinear;
-    private TextView productDetailPrize;
 
 
     @Override
@@ -63,7 +58,7 @@ public class ProductDetailActivity extends AppCompatActivity {
         CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout);
         image = findViewById(R.id.productDetailImageView);
         titleTextView = findViewById(R.id.detailTitleTextView);
-        productDetailPrize = findViewById(R.id.productDetailPrize);
+        TextView productDetailPrize = findViewById(R.id.productDetailPrize);
         layoutConstraint = findViewById(R.id.layoutConstraint);
         layoutLinear = findViewById(R.id.layoutLinear);
         FloatingActionButton fab = findViewById(R.id.fab);

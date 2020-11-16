@@ -6,19 +6,19 @@
     <item
         android:id="@+id/changeLayoutOption"
         android:icon="@drawable/ic_baseline_view_day_24"
-        android:title="Change Layout"
-        app:showAsAction="always" />
+        android:title="@string/change_layout"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/favOption"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="Favorite"
+        android:title="@string/favorite"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/cartOption"
         android:icon="@drawable/ic_baseline_shopping_cart_24"
-        android:title="Cart"
+        android:title="@string/cart"
         app:showAsAction="always" />
 
 </menu>

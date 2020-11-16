@@ -16,13 +16,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CartActivity extends AppCompatActivity implements ProductCartAdapter.OnItemClickListener {
 
     private Button checkoutButton;
     private RecyclerView recyclerView;
-    private LinearLayoutManager layoutManager;
-    private ProductCartAdapter adapter;
     private DatabaseHelper databaseHelper;
     TextView nothingTextView;
 
@@ -35,12 +34,12 @@ public class CartActivity extends AppCompatActivity implements ProductCartAdapte
         recyclerView = findViewById(R.id.productsCartRecyclerView);
         nothingTextView = findViewById(R.id.nothingTextView);
 
-        layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
         databaseHelper = new DatabaseHelper(this);
 
-        adapter = new ProductCartAdapter(this, this);
+        ProductCartAdapter adapter = new ProductCartAdapter(this, this);
 
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
@@ -60,7 +59,7 @@ public class CartActivity extends AppCompatActivity implements ProductCartAdapte
     @Override
     public void onResume() {
         super.onResume();
-        recyclerView.getAdapter().notifyDataSetChanged();
+        Objects.requireNonNull(recyclerView.getAdapter()).notifyDataSetChanged();
         if (databaseHelper.getCartText().size() == 0) {
             checkoutButton.setVisibility(View.GONE);
             nothingTextView.setVisibility(View.VISIBLE);

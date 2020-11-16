@@ -2,7 +2,6 @@ package com.example.productstore;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.LayoutInflater;
@@ -11,19 +10,16 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class ProductFragment extends Fragment implements ProductAdapter.OnItemClickListener {
 
@@ -31,17 +27,14 @@ public class ProductFragment extends Fragment implements ProductAdapter.OnItemCl
     private ProductAdapter mAdapter;
     boolean isGrid = true;
     private StaggeredGridLayoutManager layoutManager;
-    private ConstraintLayout outerConstraintLayout;
-    private DatabaseHelper databaseHelper;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.product_fragment, container, false);
         recyclerView = root.findViewById(R.id.productsRecyclerView);
-        outerConstraintLayout = root.findViewById(R.id.outerConstraintLayout);
 
-        databaseHelper = new DatabaseHelper(requireContext());
+        DatabaseHelper databaseHelper = new DatabaseHelper(requireContext());
 
         if (!databaseHelper.checkDataBase(requireContext())) {
             databaseHelper.addText(0, R.drawable.phone1, "Phone 1", "₹88000.00", "This is the description of the productThis is the description of the productThis is the description of the productThis is the description of the productThis is the description of the productThis is the description of the productThis is the description of the product", false, false);
@@ -76,17 +69,13 @@ public class ProductFragment extends Fragment implements ProductAdapter.OnItemCl
     @Override
     public void onResume() {
         super.onResume();
-        recyclerView.getAdapter().notifyDataSetChanged();
+        Objects.requireNonNull(recyclerView.getAdapter()).notifyDataSetChanged();
     }
 
     @Override
     public void onItemClick(int position, ImageView imageView, @NotNull TextView textView, ViewGroup layoutCardView, ViewGroup linearLayout, ImageButton cartImageButton, ImageButton favoriteImageButton, int resId) {
 
         Intent intent = new Intent(requireContext(), ProductDetailActivity.class);
-        /*intent.putExtra(ProductDetailActivity.IMAGE_RESOURCE_DRAWABLE, resId);
-        intent.putExtra(ProductDetailActivity.TITLE_NAME, textView.getText().toString());
-        intent.putExtra(ProductDetailActivity.FAV_PRODUCT, productItems.get(position).favorite);
-        intent.putExtra(ProductDetailActivity.IN_CART, productItems.get(position).inCart);*/
         intent.putExtra(ProductDetailActivity.POSITION_PRODUCT_ITEM, position);
         // create the transition animation - the images in the layouts
         // of both activities are defined with android:transitionName="robot"

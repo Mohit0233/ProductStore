@@ -37,7 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addText(int id, @DrawableRes int resId, String title, String prize, String description, boolean favorite, boolean cart) {
+    public void addText(int id, @DrawableRes int resId, String title, String prize, String description, boolean favorite, boolean cart) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("id", id);
@@ -48,12 +48,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("favorite", favorite);
         contentValues.put("cart", cart);
         try {
-            long result = sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
-
-            return result != -1;
+            sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
         }
     }
 
@@ -75,7 +72,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             cursor.moveToNext();
         }
-
+        cursor.close();
         return arrayList;
     }
 
@@ -95,7 +92,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put("favorite", favoriteInt);
         contentValues.put("cart", cartInt);
         long result = sqLiteDatabase.update(TABLE_NAME, contentValues, "id = " + id, null);
-
         return result != -1;
     }
 
@@ -117,7 +113,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             cursor.moveToNext();
         }
-
+        cursor.close();
         return arrayList;
     }
 
@@ -140,6 +136,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             );
             cursor.moveToNext();
         }
+        cursor.close();
         return arrayList;
     }
 

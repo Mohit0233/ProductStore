@@ -41,7 +41,6 @@ public class CheckoutActivity extends AppCompatActivity {
                 overlayImageView.setVisibility(View.VISIBLE);
             }
             ArrayList<ProductItem> arrayList = databaseHelper.getAllText();
-            int h = arrayList.size();
             for (int i = 0; i < arrayList.size(); i ++) {
                     arrayList.get(i).inCart = false;
                     databaseHelper.changeValuesAtPos(i,arrayList.get(i));

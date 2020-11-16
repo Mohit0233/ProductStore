@@ -33,7 +33,7 @@
             android:id="@+id/checkoutButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Proceed to Buy" />
+            android:text="@string/proceed_to_buy" />
 
     </LinearLayout>
 

@@ -13,34 +13,37 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        android:hint="Enter your name"
+        android:hint="@string/enter_your_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="username" />
 
     <EditText
         android:id="@+id/phoneEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Phone No."
+        android:hint="@string/phone_no"
         android:ems="10"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="@+id/nameEditText"
         app:layout_constraintStart_toStartOf="@+id/nameEditText"
-        app:layout_constraintTop_toBottomOf="@+id/nameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/nameEditText"
+        android:autofillHints="phone" />
 
     <EditText
         android:id="@+id/addressEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Address"
+        android:hint="@string/address"
         android:inputType="textPostalAddress"
         app:layout_constraintEnd_toEndOf="@+id/nameEditText"
         app:layout_constraintStart_toStartOf="@+id/nameEditText"
-        app:layout_constraintTop_toBottomOf="@+id/phoneEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditText"
+        android:autofillHints="address" />
 
     <RadioGroup
         android:id="@+id/radioGroup"
@@ -56,19 +59,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Visa" />
+            android:text="@string/visa" />
 
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Debit" />
+            android:text="@string/debit" />
 
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cash" />
+            android:text="@string/cash" />
     </RadioGroup>
 
     <Button
@@ -76,7 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Submit"
+        android:text="@string/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +96,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/overlay_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

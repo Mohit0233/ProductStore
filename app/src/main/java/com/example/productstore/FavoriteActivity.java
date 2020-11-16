@@ -18,22 +18,18 @@ import java.util.List;
 
 public class FavoriteActivity extends AppCompatActivity implements ProductFavoriteAdapter.OnItemClickListener {
 
-    private RecyclerView recyclerView;
-    private LinearLayoutManager layoutManager;
-    private ProductFavoriteAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorite);
 
 
-        recyclerView = findViewById(R.id.productsFavoriteRecyclerView);
+        RecyclerView recyclerView = findViewById(R.id.productsFavoriteRecyclerView);
 
-        layoutManager = new LinearLayoutManager(this);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new ProductFavoriteAdapter(this, this);
+        ProductFavoriteAdapter adapter = new ProductFavoriteAdapter(this, this);
 
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);

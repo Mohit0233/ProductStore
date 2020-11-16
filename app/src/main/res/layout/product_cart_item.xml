@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/cartLayout"
+<androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/cartLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="140dp">
 
@@ -15,7 +13,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/phone1" />
+        android:src="@drawable/phone1"
+        android:contentDescription="@string/product_image" />
 
     <ImageButton
         android:id="@+id/cartRemoveImageButton"
@@ -25,7 +24,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_delete_24" />
+        app:srcCompat="@drawable/ic_baseline_delete_24"
+        android:contentDescription="@string/remove_from_cart" />
 
     <TextView
         android:id="@+id/cartTitleTextView"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/product_name"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/cartImageView"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="TextView"
+        android:text="@string/product_prize"
         app:layout_constraintStart_toStartOf="@+id/cartTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/cartTitleTextView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

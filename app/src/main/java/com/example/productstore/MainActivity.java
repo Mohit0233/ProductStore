@@ -1,11 +1,9 @@
 package com.example.productstore;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,5 +17,13 @@ public class MainActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK );
         startActivity(intent);
+        finish();
+    }
+
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        overridePendingTransition(0, 0);
     }
 }
