@@ -10,13 +10,17 @@ import android.widget.ImageView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+
 public class CheckoutActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
         Button submitButton = findViewById(R.id.submitButton);
         ImageView overlayImageView = findViewById(R.id.overlayImageView);
         EditText name, phoneNo, address;
@@ -36,7 +40,12 @@ public class CheckoutActivity extends AppCompatActivity {
                 submitButton.setVisibility(View.GONE);
                 overlayImageView.setVisibility(View.VISIBLE);
             }
+            ArrayList<ProductItem> arrayList = databaseHelper.getAllText();
+            int h = arrayList.size();
+            for (int i = 0; i < arrayList.size(); i ++) {
+                    arrayList.get(i).inCart = false;
+                    databaseHelper.changeValuesAtPos(i,arrayList.get(i));
+            }
         });
-
     }
 }

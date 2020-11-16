@@ -56,6 +56,17 @@ public class CartActivity extends AppCompatActivity implements ProductCartAdapte
         });
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        recyclerView.getAdapter().notifyDataSetChanged();
+        if (databaseHelper.getCartText().size() == 0) {
+            checkoutButton.setVisibility(View.GONE);
+            nothingTextView.setVisibility(View.VISIBLE);
+        }
+    }
+
     @Override
     public void onItemClick(int position, ImageView imageView, TextView textView, ViewGroup cardLayout, int resId) {
 
