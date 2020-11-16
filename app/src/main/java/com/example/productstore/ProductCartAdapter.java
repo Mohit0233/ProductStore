@@ -32,6 +32,7 @@ public class ProductCartAdapter extends RecyclerView.Adapter<ProductCartAdapter.
             prize = view.findViewById(R.id.cartPrizeTextView);
             remove = view.findViewById(R.id.cartRemoveImageButton);
             cartLayout = view.findViewById(R.id.cartLayout);
+            view.setOnClickListener(this);
         }
         @Override
         public void onClick(View v) {
